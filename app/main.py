@@ -1,12 +1,11 @@
 from __future__ import annotations
-from typing import Any
 
 
 class Animal:
 
     alive = []
 
-    def __int__(
+    def __init__(
             self,
             name: str,
             health: int | float = 100,
@@ -17,7 +16,7 @@ class Animal:
         self.hidden = hidden
         Animal.alive.append(self)
 
-    def __repr__(self) -> Any:
+    def __repr__(self) -> str:
         return (
             f"{{Name: {self.name}, Health: {self.health}, "
             f"Hidden: {self.hidden}}}"
@@ -26,7 +25,7 @@ class Animal:
 
 class Herbivore(Animal):
 
-    def hide(self):
+    def hide(self) -> None:
         self.hidden = not self.hidden
 
 
